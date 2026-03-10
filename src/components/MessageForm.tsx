@@ -7,9 +7,8 @@ const MessageForm = () => {
    const[message, setMessage]=useState<string>('');
    const[delay, setDelay]=useState<number>(5);
    const [isSending, setisSending] =useState<boolean>(false);
-   const [timerId, setTimerId]=useState<NodeJS.Timeout|null>(null);
+   const [timerId, setTimerId] = useState<ReturnType<typeof setTimeout> | null>(null);
    const [sentMessage, setSentMessage]=useState<string>('');
-
    const HandleSend = () => {
     setisSending(true)
     const id=setTimeout(() => {
